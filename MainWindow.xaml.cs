@@ -51,12 +51,15 @@ namespace Manga_Scraper {
             string responseBody = await DownloadUrlToString(url);
             var dots = new List<string> { ".", "..", "..." };
             int count = 0;
-            foreach (Match match in new Regex("https[^\"]*\\.(webp|png|jpe?g)").Matches(responseBody)) {
+            var matches = new Regex("https[^\"]*\\.(webp|png|jpe?g)").Matches(responseBody);
+            foreach (Match match in matches) {
+                ++count;
+                ProgressBox.Value = count / (double)matches.Count;
                 if (match.Value.Contains("icon")) {
                     continue;
                 }
                 StatusBox.Text = "Loading images " + dots[count % 3];
-                await DownloadUrlToFile(match.Value, folderPath, (++count).ToString("000.##"));
+                await DownloadUrlToFile(match.Value, folderPath, count.ToString("000.##"));
             }
 
             StatusBox.Text = "Zipping";

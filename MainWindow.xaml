@@ -5,14 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Manga_Scraper"
         mc:Ignorable="d"
-        Title="Manga Scraper" Height="450" Width="360">
+        Title="Manga Scraper" Height="450" MinHeight="450" MaxHeight="450" Width="360" MinWidth="360">
     <Grid>
-        <TextBox x:Name="UrlBox" HorizontalAlignment="Left" Margin="80,83,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="214"/>
-        <Label Content="Url to scrape" HorizontalAlignment="Left" Margin="80,52,0,0" VerticalAlignment="Top"/>
-        <Label Content="Output Name" HorizontalAlignment="Left" Margin="80,131,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="ScrapeButton" Content="Scrape!" HorizontalAlignment="Left" Margin="119,0,0,45" Width="112" Height="57" VerticalAlignment="Bottom" FontSize="18" Click="ScrapeButton_Click"/>
-        <TextBlock x:Name="StatusBox" HorizontalAlignment="Left" Margin="121,286,0,0" Text="Ready" TextWrapping="Wrap" VerticalAlignment="Top" Height="18" Width="110"/>
-        <Button x:Name="NameBox" Content="" HorizontalAlignment="Left" Margin="82,162,0,0" VerticalAlignment="Top" Width="212" Background="White" Click="NameBox_Click"/>
+        <TextBox x:Name="UrlBox" Margin="80,83,66,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <Label Content="Url to scrape" Margin="80,52,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="77"/>
+        <Label Content="Output Name" Margin="80,131,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="83"/>
+        <Button x:Name="ScrapeButton" Content="Scrape!" Margin="119,0,129,45" Height="57" VerticalAlignment="Bottom" FontSize="18" Click="ScrapeButton_Click"/>
+        <TextBlock x:Name="StatusBox" Margin="121,0,0,130" Text="Ready" TextWrapping="Wrap" Height="18" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="110"/>
+        <Button x:Name="NameBox" Content="" Margin="82,162,66,0" VerticalAlignment="Top" Background="White" Click="NameBox_Click"/>
+        <ProgressBar x:Name="ProgressBox" Margin="121,0,129,107" Maximum="1" LargeChange="0.1" SmallChange="1" Height="18" VerticalAlignment="Bottom"/>
 
     </Grid>
 </Window>
